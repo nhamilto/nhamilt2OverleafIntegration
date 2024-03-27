@@ -1,4 +1,3 @@
-\documentclass[aip,amsmath,amssymb,preprint,]{revtex4-1}
 % ****** Start of file aipsamp.tex ******
 %
 %   This file is part of the AIP files in the AIP distribution for REVTeX 4.
@@ -20,7 +19,15 @@
 %
 % Use this file as a source of example code for your aip document.
 % Use the file aiptemplate.tex as a template for your document.
-% \documentclass[aip,amsmath,amssymb,preprint,]{revtex4-1}
+\documentclass[%
+ aip,
+% jmp,%
+ amsmath,amssymb,
+preprint,%
+% reprint,%
+%author-year,%
+%author-numerical,%
+]{revtex4-1}
 
 \usepackage{graphicx}% Include figure files
 \usepackage{dcolumn}% Align table columns on decimal point
@@ -40,6 +47,9 @@
 \author{Nicholas Hamilton}
 \email{nicholas.hamilton@nrel.gov}
 \author{Paula Doubrawa}
+\author{Patrick Moriarty}
+\author{Stefano Letizia}
+\author{Regis Thedin}
 \affiliation{National Renewable Energy Laboratory (NREL), Golden, Colorado, USA}
 \author{Peter Brugger}
 \author{Fernando Port\'e-Agel}
@@ -242,12 +252,12 @@ The only notable yaw misalignment is seen for Case A, where the turbine controll
 The average yaw misalignment for each case is less than 3$^\circ$, despite the dynamic shift in atmospheric conditions seen during Case A. 
 For each case, the average misalignment is 1.7$^\circ$, -1.6$^\circ$, and 0.4$^\circ$ for Cases A, B, and C, respectively, and the standard deviations are 11.3$^\circ$, 1.7$^\circ$, 2.5$^\circ$.
 
-% \begin{figure}[htb]
-%     \centering
-%     \includegraphics[width=\columnwidth]{figs/inflow_20210812.png}
-%     \caption{Wind speed (top left), wind direction (top right), and turbulence intensity (bottom left) recorded by the sonic anemometer at 50 m AGL. Yaw misalignment (bottom right) calculated as the difference between the nacelle heading and wind direction.}
-%     \label{fig:inflow}
-% \end{figure}
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\columnwidth]{figs/inflow_20210812.png}
+    \caption{Wind speed (top left), wind direction (top right), and turbulence intensity (bottom left) recorded by the sonic anemometer at 50 m AGL. Yaw misalignment (bottom right) calculated as the difference between the nacelle heading and wind direction.}
+    \label{fig:inflow}
+\end{figure}
 
 % \begin{figure}[htbp]
 %   \centering
@@ -266,12 +276,12 @@ The integral time scale for each case was calculated on a rolling 10-min basis f
 In this work, the integral time scales, $T$, are taken as the characteristic period of the fluctuation in the velocity field and are used to define the characteristic frequency of turbulent fluctuations in the discussion of meandering frequencies. 
 In each box plot, the whiskers extend to the maximum and minimum of each distribution and the line in the boxes denote median values of $T$ for each case.
 
-% \begin{figure}[h]
-%     \centering
-%     \includegraphics[width=0.5\textwidth]{figs/time_scale_box.png}
-%     \caption{Distributions of the integral time scale $T$ for each case. }
-%     \label{fig:ts}
-% \end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figs/time_scale_box.png}
+    \caption{Distributions of the integral time scale $T$ for each case. }
+    \label{fig:ts}
+\end{figure}
 
 \Cref{fig:avescan} shows the time-averaged streamwise velocity field computed from the lidar scans, $\overline{u}$, for each Case Along with the detected wake center.
 The average for each case contains information from 397 lidar scans. 
@@ -282,12 +292,12 @@ The mean flow field in Case B is well aligned with the mean flow direction throu
 In Case C, the wake is slightly askew from the mean wind direction, highlighted by the detected wake centers tending toward negative values of $y/D$.
 
 
-% \begin{figure}[h]
-%   \centering
-%   \includegraphics[width=\columnwidth]{figs/mean_scans_20210810.png}
-%   \caption{Time-averaged flow field from lidar scans and detected wake centers for cases A, B, and C}
-%   \label{fig:avescan}
-% \end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/mean_scans_20210810.png}
+  \caption{Time-averaged flow field from lidar scans and detected wake centers for cases A, B, and C}
+  \label{fig:avescan}
+\end{figure}
 
 % section Data (end)
 
@@ -310,12 +320,12 @@ The inflow Case B shows very little change in wind direction and yaw misalignmen
 However, the overall and 10-min ensemble averaged wake centers show the greatest deflection in \cref{fig:wakecenter}, although the mean wake centers remain within $y/D \le -0.27$.
 
 
-% \begin{figure}[htb]
-%   \centering
-%   \includegraphics[width=0.95\textwidth]{figs/wake_center_mean_and_std_20210810.png}
-%   \caption{Mean (left) and standard deviation (right) of detected wake center locations from lidar scans.}
-%   \label{fig:wakecenter}
-% \end{figure}
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.95\textwidth]{figs/wake_center_mean_and_std_20210810.png}
+  \caption{Mean (left) and standard deviation (right) of detected wake center locations from lidar scans.}
+  \label{fig:wakecenter}
+\end{figure}
 
 The difference between the 10-minute average and wake center locations and the average of the full datasets for each case are highlighted by the time series of detected wake centers for each case in \cref{fig:wakecenterts}.
 Most evident in Case A, the variability in detected weight center is not consistent throughout the time series. 
@@ -335,22 +345,22 @@ This is not surprising given that the wake is generated at the wind turbine, and
 As the wake advects downstream, the momentum deficit region also tends to break up into smaller structures. 
 This results in a fit of the wake center that is more prone to sudden jumps from one area to another, contributing to the spread shown in \cref{fig:centerdist}.
 % Gaussian profile more difficult to fit in a meaningful way. 
-% \begin{figure}[h]
-%   \centering
-%   \begin{subfigure}[b]{0.475\columnwidth}
-%     \includegraphics[width=\columnwidth]{figs/center_locations_distribution_B_20210818.png}
-%     \caption{Distribution of detected center locations downstream of the turbine in Case C.}
-%     \label{fig:centerdist}
-%   \end{subfigure}
-%   \hfill
-%   \begin{subfigure}[b]{0.475\columnwidth}
-%     \includegraphics[width=\columnwidth]{figs/center_locations_distribution_comparison_20210818.png}
-%     \caption{Comparison of wake center distributions for all cases}
-%     \label{fig:centerdistcomp}
-%   \end{subfigure}
-%   \caption{The detected wake centers for each case vary as with downstream distance (left) and operating conditions (right).}
-%   \label{fig:hists}
-% \end{figure}
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[b]{0.475\columnwidth}
+    \includegraphics[width=\columnwidth]{figs/center_locations_distribution_B_20210818.png}
+    \caption{Distribution of detected center locations downstream of the turbine in Case C.}
+    \label{fig:centerdist}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.475\columnwidth}
+    \includegraphics[width=\columnwidth]{figs/center_locations_distribution_comparison_20210818.png}
+    \caption{Comparison of wake center distributions for all cases}
+    \label{fig:centerdistcomp}
+  \end{subfigure}
+  \caption{The detected wake centers for each case vary as with downstream distance (left) and operating conditions (right).}
+  \label{fig:hists}
+\end{figure}
 \Cref{fig:centerdistcomp} compares the distributions of wake center locations at $x/D=6$ for each case.
 Echoing the time series shown in \cref{fig:wakecenterts} the distribution of Case B shows the least spread, taken here to indicate less wake meandering. 
 Case C shows an intermediate level of meandering, and Case A a high level.
@@ -388,21 +398,37 @@ This trend corresponds to the distributions shown in \cref{fig:centerdistcomp}: 
   \end{tabular}
 \end{table}
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\columnwidth]{figs/eigenvalues_20210818.png}
+    \caption{Distribution of TKE described by the normalized eigenvalues of the POD (left) and their cumulative summation (right).}
+    \label{fig:PODeig}
+\end{figure}
 % \begin{figure}[h]
-%     \centering
-%     \includegraphics[width=\columnwidth]{figs/eigenvalues_20210818.png}
-%     \caption{Distribution of TKE described by the normalized eigenvalues of the POD (left) and their cumulative summation (right).}
-%     \label{fig:PODeig}
+%   \centering
+%   \begin{subfigure}[b]{0.475\columnwidth}
+%     \includegraphics[width=\columnwidth]{figs/eigenvalues_constantmean.png}
+%     \caption{Normalized POD eigenvalues}
+%     \label{fig:eig}
+%   \end{subfigure}
+%   \hfill
+%   \begin{subfigure}[b]{0.475\columnwidth}
+%     \includegraphics[width=\columnwidth]{figs/eigenvalues_sumsum_constantmean.png}
+%     \caption{Cumulative summation of eigenvalues}
+%     \label{fig:cumsum}
+%   \end{subfigure}
+%   \caption{Distribution of TKE described by the eigenvalues of the POD.}
+%   \label{fig:PODeig}
 % \end{figure}
 
 The full span of modal basis described by the POD does not converge evenly. Lower-rank modes describe turbulent structures represented in more observations, by definition, and converge faster. Higher ranking modes represent less coherent structures, and require a larger sample size to be statistically converged. \Cref{fig:convergence} contains the results of a convergence test that compares the variability of POD modes constructed from randomly sampled snapshots within the set of observations, averaging over all three test cases. The mode error, $\varepsilon_{\phi^{(i)}}$, shown in \cref{fig:convergence} is defined as the standard deviation of POD modes defined with a randomly selected sample of $N$ snapshots. For each basis size $N$, up to 1000 subsets of observations were used to define POD bases, offering a statistical view of the structures described by the POD modes. 
 
-% \begin{figure}[htb]
-%     \centering
-%     \includegraphics[width=0.85\textwidth]{figs/convergence_std.png}
-%     \caption{Convergence of POD modes with increasing observational sample size. Blue region represents region where the mode error is less than 10\% and is considered converged.}
-%     \label{fig:convergence}
-% \end{figure}
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.85\textwidth]{figs/convergence_std.png}
+    \caption{Convergence of POD modes with increasing observational sample size. Blue region represents region where the mode error is less than 10\% and is considered converged.}
+    \label{fig:convergence}
+\end{figure}
 
 Only the first 15 modes, containing the most coherent structures observed in the lidar scans, are considered in the flow field reconstruction for meandering analysis. \Cref{fig:convergence} shows that there is little variability in the first 4 POD modes for sets of $\sim275$ observations or more, at which point the mode error $\varepsilon_{\phi^{(i)}}$ stays below 10\% highlighted as a blue region in the figure.
 Here, we choose 10\% as the error threshold that identifies when statistical convergence is reached for each mode number.
@@ -425,12 +451,33 @@ For all values of $k$, $\Delta \sigma_c$ increases with $x/D$, indicating that t
 It is also clear from the figure that using a larger number of modes shifts the bulk of the distributions of $\Delta \sigma_c$ toward zero, improving the representation of wake meander.
 Notably, when $k=8$ or $k=12$, there are more outlier values of $\Delta \sigma_c$ in the far wake of Cases A and C and more cases that overshoot the target of $\Delta \sigma_c=0$, indicating that there are particular combinations of POD modes that over represent the wake meander in those cases.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\columnwidth]{figs/delta_std_boxplots_20210818.png}
+    \caption{Distribution of the change in wake center standard deviation for up to $k\in[4,8,12]$ modes (from left).}
+    \label{fig:delta_std}
+\end{figure}
 % \begin{figure}[h]
-%     \centering
-%     \includegraphics[width=\columnwidth]{figs/delta_std_boxplots_20210818.png}
-%     \caption{Distribution of the change in wake center standard deviation for up to $k\in[4,8,12]$ modes (from left).}
-%     \label{fig:delta_std}
+%   \centering
+%   \begin{subfigure}[b]{0.49\columnwidth}
+%     \includegraphics[width=\columnwidth]{figs/delta_std_boxplots_xd4.png}
+%     \caption{$k=4$}
+%     \label{fig:energy_ratio}
+%   \end{subfigure}
+%   \begin{subfigure}[b]{0.49\columnwidth}
+%     \includegraphics[width=\columnwidth]{figs/delta_std_boxplots_xd8.png}
+%     \caption{$k=8$}
+%     \label{fig:energy_ratio_lowtvar}
+%   \end{subfigure}
+%   \begin{subfigure}[b]{0.49\columnwidth}
+%     \includegraphics[width=\columnwidth]{figs/delta_std_boxplots_xd12.png}
+%     \caption{$k=12$}
+%     \label{fig:T3_energy_ratio_comp}
+%   \end{subfigure}
+%   \caption{Distribution of the change in wake center standard deviation for up to $N\in[4,8,12]$ modes.}
+%   \label{fig:delta_std}
 % \end{figure}
+
 In a general sense, wake meandering in Case B appears to be more accurately reproduced through POD reconstruction.
 However, beyond $x/D = 5$, there are  particular combinations of modes that very accurately represent Cases A and C, even while the majority of combinations do not.
 Table \ref{tab:minerr} shows the best outcome for each case at each downstream position in terms of $\Delta \sigma_c$. 
@@ -473,12 +520,12 @@ In Case B (center) this is evident for $x/D \ge 7$ where the best 10-mode recons
 For Case C (right) the representation of wake meandering with 6 to 12 modes converges at $x/D=6$. 
 This is taken to indicate that the meander cannot be accurately represented with any combination of 5 modes or fewer, and that some interaction between turbulent structures leads to meandering in this case.
 
-% \begin{figure}[h]
-%   \centering
-%   \includegraphics[width=0.95\textwidth]{figs/min_delta_stdDev_by_N.png}
-%   \caption{Best-fit reconstruction of wake meander for Cases A, B, and C (from left) at each downstream location varying maximum number of modes.}
-%   \label{fig:minDelta}
-% \end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.95\textwidth]{figs/min_delta_stdDev_by_N.png}
+  \caption{Best-fit reconstruction of wake meander for Cases A, B, and C (from left) at each downstream location varying maximum number of modes.}
+  \label{fig:minDelta}
+\end{figure}
 
 Universally across the cases tested here, not every mode contributes to the accurate representation of wake meandering.
 \Cref{fig:modeOccurenceInBestCases} tabulates the frequency of representation of particular POD modes in the best fit combinations for each value of $k$.
@@ -488,12 +535,12 @@ Conversely, mode 7 is not present in any of the best fit combinations for Case A
 While the modes from one case are not expected to be identical to those from any other case---given that they characterize the turbulence in different atmospheric conditions---they should represent structures of approximately the same scale. 
 Inconsistent dependence on mode structures from case to case may indicate that wake meandering has a more complicated relationship with turbulence in the wake than noted in the literature. %Paula?
 
-% \begin{figure}[h]
-%   \centering
-%   \includegraphics[width=0.75\textwidth]{figs/modeOccurenceInBestCases.png}
-%   \caption{Frequency of mode representation in best-fit reconstructions varying maximum number of modes.}
-%   \label{fig:modeOccurenceInBestCases}
-% \end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.75\textwidth]{figs/modeOccurenceInBestCases.png}
+  \caption{Frequency of mode representation in best-fit reconstructions varying maximum number of modes.}
+  \label{fig:modeOccurenceInBestCases}
+\end{figure}
 
 To assess the dependence of wake meandering statistics on particular POD modes, a linear regression test was conducted with the full suite of 30706 mode combinations for each case.
 Each low-dimensional representation of the flow field is a linear combination of the product of POD modes and their respective coefficients, suggesting that the reconstructed flow field $\hat{u}$ can only be linearly dependent on each mode. 
@@ -511,13 +558,13 @@ Large negative values of $\beta$ contribute most to accurately reproducing wake 
 In Case B, modes 1 and 2 are the dominant contributors, followed by modes 5--11 to a lesser degree.
 For Case C, modes 1, 2, and 5 are most highly correlated with wake meandering.
 
-% \begin{figure}[h]
-%   \centering
-%   \includegraphics[width=0.78
-%     \textwidth]{figs/regr_coefficient.png}
-%   \caption{Linear regression coefficient for each mode contributing to the variability of the reconstructed wake center.}
-%   \label{fig:regression}
-% \end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.78
+    \textwidth]{figs/regr_coefficient.png}
+  \caption{Linear regression coefficient for each mode contributing to the variability of the reconstructed wake center.}
+  \label{fig:regression}
+\end{figure}
 
 \Cref{fig:bestworst} illustrates selected turbulence structures underlying the regression test results for Case C in \cref{fig:regression}. 
 In the left column, modes 1, 2, and 5 are those that contribute most to the accurate reconstruction of wake meander. 
@@ -525,22 +572,22 @@ Each of the structures for modes 1, 2, and 5 occupy the full scan area and exhib
 In the right column, the structures have a more complicated spatial character, highlighting many smaller regions within the scan area. 
 When integrated into a reconstructed flow field as in \cref{eqn:nuts}, these structures do not contribute significantly to the meandering of the wake center. 
 
-% \begin{figure}[h]
-%   \centering
-%   \begin{subfigure}[b]{0.45\columnwidth}
-%     \includegraphics[width=\columnwidth]{figs/C_best_modes.png}
-%     % \caption{Normalized POD eigenvalues}
-%     % \label{fig:eig}
-%   \end{subfigure}
-%   \hspace{0.5cm}
-%   \begin{subfigure}[b]{0.45\columnwidth}
-%     \includegraphics[width=\columnwidth]{figs/C_worst_modes_20210818.png}
-%     % \caption{Cumulative summation of eigenvalues}
-%     % \label{fig:cumsum}
-%   \end{subfigure}
-%   \caption{Modes contributing the most (left) and the least (right) to the accurate reproduction of wake meander.}
-%   \label{fig:bestworst}
-% \end{figure}
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[b]{0.45\columnwidth}
+    \includegraphics[width=\columnwidth]{figs/C_best_modes.png}
+    % \caption{Normalized POD eigenvalues}
+    % \label{fig:eig}
+  \end{subfigure}
+  \hspace{0.5cm}
+  \begin{subfigure}[b]{0.45\columnwidth}
+    \includegraphics[width=\columnwidth]{figs/C_worst_modes_20210818.png}
+    % \caption{Cumulative summation of eigenvalues}
+    % \label{fig:cumsum}
+  \end{subfigure}
+  \caption{Modes contributing the most (left) and the least (right) to the accurate reproduction of wake meander.}
+  \label{fig:bestworst}
+\end{figure}
 
 
 
@@ -553,12 +600,12 @@ This in itself is interesting as the near wake was shown in \cref{fig:centerdist
 That the best-fit reconstruction misses the near wake may indicate that particular modes are better suited to represent the wake center distribution near the turbine, and others better for the far wake.
 The worst-fit reconstruction (right) does not accurately represent either the flow field or the wake centers. 
 
-% \begin{figure}[h]
-%   \centering
-%   \includegraphics[width=\textwidth]{figs/C_rec_best_worst.png}
-%   \caption{Velocity field from Case A (left) along with the best (center) and worst (right) reconstructions with 7 modes.}
-%   \label{fig:fieldrec}
-% \end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{figs/C_rec_best_worst.png}
+  \caption{Velocity field from Case A (left) along with the best (center) and worst (right) reconstructions with 7 modes.}
+  \label{fig:fieldrec}
+\end{figure}
 
 The inflow Strouhal number, $St_\text{in}=D/U_\text{hub}\cdot T $, defined with the rotor diameter, the hub-height inflow velocity, and the inverse of the integral time scale represents the cutoff frequency for the externally-driven meandering hypothesis.
 In this hypothesis, any turbulent motions in the inflow occurring at a frequency at or below $St_\text{in}$ are assumed to carry the momentum deficit of the wake as a passive tracer.
@@ -567,12 +614,12 @@ The comparison of $St_\text{in}$ to spectra of the detected wake centers  ($P_\t
 While the peaks of spectra, shown as dots, for Cases B and C (orange and gray) occur below $St_\text{in}$, shown as vertical lines, this relationship does not hold for Case A.
 The cause for the unexpected behavior in the wake center location spectra for Case A is not immediately clear, but may be related to the change of operating conditions seen during that time period. 
 
-% \begin{figure}[htb]
-%     \centering
-%     \includegraphics[width=\columnwidth]{figs/wake_spectra.png}
-%     \caption{Wake center spectra from the lidar scans in Strouhal scaling. The vertical line in each plot shows $St_\text{in}$ for Cases A, B, and C, from left.}
-%     \label{fig:wakeSpectra}
-% \end{figure}
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\columnwidth]{figs/wake_spectra.png}
+    \caption{Wake center spectra from the lidar scans in Strouhal scaling. The vertical line in each plot shows $St_\text{in}$ for Cases A, B, and C, from left.}
+    \label{fig:wakeSpectra}
+\end{figure}
 
 POD modes themselves are functions only of space, all time dependence of each structure is contained in the mode amplitudes $a_i(t)$, as in \cref{eqn:POD}.
 Computing the power spectral density (PSD) for each mode coefficient ($P_{a_i}$) highlights the spectral contribution of each mode in the reduced-order description of the wake.
@@ -585,29 +632,29 @@ PSDs of coefficients that contribute least to the reconstruction of wake meander
 Note that modes are listed in the order of the greatest (left) and least (right) contributions, and are different for each case.
 For each mode, a point of the same color indicates the maximum value of the PSD and the characteristic Strouhal number, $St_{a_i, \text{c}}$.
 
-% \begin{figure}[h]
-%   \centering
-%   \begin{subfigure}[b]{0.49\columnwidth}
-%     \includegraphics[width=\columnwidth]{figs/best_coeff_st.png}
-%   \end{subfigure}
-%   \begin{subfigure}[b]{0.49\columnwidth}
-%     \includegraphics[width=\columnwidth]{figs/worst_coeff_st.png}
-%   \end{subfigure}
-%   \caption{PSDs of POD projection coefficients ($a_i$) for the modes that contribute most (left) and least (right) to wake meandering.}
-%   \label{fig:bestworstcoeff}
-% \end{figure}
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[b]{0.49\columnwidth}
+    \includegraphics[width=\columnwidth]{figs/best_coeff_st.png}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\columnwidth}
+    \includegraphics[width=\columnwidth]{figs/worst_coeff_st.png}
+  \end{subfigure}
+  \caption{PSDs of POD projection coefficients ($a_i$) for the modes that contribute most (left) and least (right) to wake meandering.}
+  \label{fig:bestworstcoeff}
+\end{figure}
 
 The spectra shown in \cref{fig:bestworstcoeff} associated with an accurate representation of wake meandering (left) consistently show peaks of $St_{a_i, \text{c}} < 0.2$, agreeing with dominant meandering frequencies in previous work,
 \cite{medici2008measurements,okulov2007stability, okulov2014regular,howard2015statistics,foti2016wake,foti2018wake,baker1985wake,zambrano1983wake,larsen2007dynamic,larsen2008wake,jonkman2017development}
 but the relationship is less clear for modes that contribute little to meandering (right).
 \Cref{fig:ST_comp} compares the $St$ associated with spectral peaks for the POD modes in all cases to those of the inflow (solid lines) and those observed in the wakes (dashed lines).
 Spectral peaks shown with open diamonds are those from the POD modes that correspond most with the accurate reconstruction of the wake meandering, filled circle markers are all other modes considered for velocity field reconstruction.
-% \begin{figure}[htb]
-%     \centering
-%     \includegraphics[width=0.8\columnwidth]{figs/ST_comparison.png}
-%     \caption{Peak $St$ derived from POD mode coefficients for each case. Diamond markers are the modes that contribute most to meander, circle markers are modes that contribute less. The solid vertical lines are $St_\text{in}$, dashed vertical lines are $St_\text{wake}$.}
-%     \label{fig:ST_comp}
-% \end{figure}
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\columnwidth]{figs/ST_comparison.png}
+    \caption{Peak $St$ derived from POD mode coefficients for each case. Diamond markers are the modes that contribute most to meander, circle markers are modes that contribute less. The solid vertical lines are $St_\text{in}$, dashed vertical lines are $St_\text{wake}$.}
+    \label{fig:ST_comp}
+\end{figure}
 As with the spectra in \cref{fig:wakeSpectra}, the results comparing $St_{a_i,\text{c}}$ for individual modes in \cref{fig:ST_comp} are not entirely consistent with the externally-driven meandering hypothesis. 
 For that to be the case, we would expect $St_{a_i,\text{c}}$ to be more cleanly divided by $St_\text{in}$, with modes that contribute to the accurate reconstruction of the wake (diamonds) at $St_{a_i,\text{c}} < St_\text{in}$ and modes that contribute little to meandering to have $St_{a_i,\text{c}} > St_\text{in}$.
 Instead, we see a mix of $St_{a_i,\text{c}}$, where some of the modes that contribute least to meander have the lowest characteristic frequencies.
@@ -638,7 +685,7 @@ A regression test between modes and meandering statistics suggests that some mod
 Moreover, some of the best-fit reconstructions may consistently fail to accurately describe the wake center at particular downstream locations depending on the modes used in the low-order description, indicating that some modes are relevant to different regions of the wake.
 
 However, spectra defined from the mode coefficients most correlated with describing wake meandering do not exhibit the expected relationship with the characteristic Strouhal numbers of the inflow or of the wake.
-Dynamics wake meandering models that treat the momentum deficit in the wake as a passive tracer assume that wake motion is driven by atmospheric turbulent above a certain cutoff frequency, and so the Strouhal numbers for significant modes should be lower than that of the inflow.
+Dynamics wake meandering models that treat the momentum deficit in the wake as a passive tracer assume that wake motion is driven by atmospheric turbulence above a certain cutoff frequency, and so the Strouhal numbers for significant modes should be lower than that of the inflow.
 Those that say wake meandering is a product of the interaction between coherent turbulent structures in the wake should expect to see a relationship between the characteristic Stouhal numbers of the wakes and those of the modes.
 Unfortunately, neither relationship is evident in the results of the current study, either because the structures that describe meandering are not adequately resolved by the measurements, or because wake meandering has a more complex relationship with turbulence in the wake and inflow than noted in the literature.
 
